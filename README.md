@@ -6,3 +6,6 @@ To install, build and run the code you should roughly do the following:
 1. `cd napi-example`
 1. `npm install`
 1. `node test/test_binding.js`
+
+## Issues
+It seems the `'conditions'` part of `bindings.gyp` is ignored, so to build for a particular platform you need to copy parts to the `'targets'` section.
