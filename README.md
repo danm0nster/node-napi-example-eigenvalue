@@ -9,5 +9,9 @@ To install, build and run the code you should roughly do the following:
 1. `npm install`
 1. `node test/test_binding.js`
 
-## Issues
-It seems the `'conditions'` part of `binding.gyp` is ignored, so to build for a particular platform you need to copy parts to the `'targets'` section.
+## Installing required software
+1. Node.js can be downloaded from the [official site](https://nodejs.org/en/)
+1. Install the node.js native add-on build tool node-gyp with npm: `$ npm install -g node-gyp`
+1. Install [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) from source or by using package, e.g.
+    * Mac OS (using [brew](https://brew.sh)): `$ brew install eigen`
+    * Linux (Debian | Ubuntu): `$ apt-get install libeigen3-dev`
