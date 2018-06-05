@@ -20,9 +20,10 @@ void PowerScoreWorker::ComputeEigenValueCentrality(Eigen::MatrixXd A, Eigen::Row
   denominator = Eigen::MatrixXd::Zero(dimension, dimension);
   powerScores = Eigen::RowVectorXd(dimension);
   // Compute the transition matrix T from the aggression matrix A
-  rowSum = A.rowwise().sum();
   // Start constructing T by adding eps to non-diagonal elements of A
   T = A + epsilon * (Ones - I);
+  // Compute row sums for normalization to conditional probabilities
+  rowSum = T.rowwise().sum();
   denominator = rowSum.replicate(1, dimension);
   // Perform element wise division to get the transition matrix
   T = T.array() / denominator.array();
